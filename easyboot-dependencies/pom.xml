@@ -22,7 +22,7 @@
         <cucumber.version>3.0.2</cucumber.version>
         <druid.version>1.1.17</druid.version>
         <fastjson.version>1.2.49</fastjson.version>
-        <flycoding.version>1.0.0</flycoding.version>
+        <easyboot.version>1.0-SNAPSHOT</easyboot.version>
         <guava.version>27.0.1-jre </guava.version>
         <hutool.version>4.6.4</hutool.version>
         <jjwt.version>0.10.5</jjwt.version>
@@ -51,19 +51,19 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
-                <groupId>com.github.flycoding</groupId>
-                <artifactId>flycoding-core</artifactId>
-                <version>${flycoding.version}</version>
+                <groupId>com.github.doItEasy</groupId>
+                <artifactId>easyboot-common</artifactId>
+                <version>${easyboot.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.flycoding</groupId>
-                <artifactId>flycoding-autoconfigure</artifactId>
-                <version>${flycoding.version}</version>
+                <groupId>com.github.doItEasy</groupId>
+                <artifactId>easyboot-tool</artifactId>
+                <version>${easyboot.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.github.flycoding</groupId>
-                <artifactId>flycoding-common</artifactId>
-                <version>${flycoding.version}</version>
+                <groupId>com.github.doItEasy</groupId>
+                <artifactId>easyboot-plus</artifactId>
+                <version>${easyboot.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.springframework.security</groupId>

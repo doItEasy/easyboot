@@ -6,7 +6,7 @@
         <artifactId>easyboot-dependencies</artifactId>
         <groupId>com.github.doItEasy</groupId>
         <version>1.0-SNAPSHOT</version>
-        <relativePath>../pom.xml</relativePath>
+        <relativePath>../easyboot-dependencies/pom.xml</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -18,12 +18,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-tomcat</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>

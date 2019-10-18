@@ -23,6 +23,7 @@
         <module>easyboot-common</module>
         <module>easyboot-tool</module>
         <module>easyboot-plus</module>
+        <module>easyboot-starter</module>
     </modules>
 
     <developers>

@@ -1,0 +1,12 @@
+/Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/exceptions/BizExceptionConstants.java
+/Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/exceptions/ServiceTimeOutException.java
+/Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/exceptions/BizException.java
+/Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/exceptions/UnAuthorizedException.java
+/Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/constants/GlobalConstants.java
+/Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/enums/ResponseCode.java
+/Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/enums/EnumBase.java
+/Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/constants/RegexConstants.java
+/Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/exceptions/ParamException.java
+/Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/exceptions/CustomException.java
+/Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/exceptions/BadRequestException.java
+/Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/exceptions/InternalServerException.java
