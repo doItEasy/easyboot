@@ -20,7 +20,7 @@ import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonSerializer;
 import com.fasterxml.jackson.databind.SerializerProvider;
-import com.github.doiteasy.easyboot.common.constants.DatePattern;
+import com.github.doiteasy.easyboot.common.constants.DateConstants;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -38,7 +38,7 @@ public class JacksonLocalDateTimeSerializer extends JsonSerializer<LocalDateTime
     @Override
     public void serialize(LocalDateTime localDateTime, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException, JsonProcessingException {
         if (localDateTime != null){
-            String string = localDateTime.format(DateTimeFormatter.ofPattern(DatePattern.yyyy_MM_dd_HH_mm_ss));
+            String string = localDateTime.format(DateTimeFormatter.ofPattern(DateConstants.YYYY_MM_DD_HH_MM_SS));
             jsonGenerator.writeString(string);
         }
     }

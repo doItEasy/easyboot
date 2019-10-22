@@ -20,6 +20,7 @@ import com.alibaba.fastjson.serializer.SerializeConfig;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.serializer.ToStringSerializer;
 import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
+import com.github.doiteasy.easyboot.common.constants.DateConstants;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -33,7 +34,6 @@ import java.util.List;
 public class FastJsonConfig implements WebMvcConfigurer {
 
     private static final String DEFAULT_CHARSET = "UTF-8";
-    private static final String DEFAULT_DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
 
 
     @Override
@@ -52,7 +52,7 @@ public class FastJsonConfig implements WebMvcConfigurer {
 
         com.alibaba.fastjson.support.config.FastJsonConfig fastJsonConfig = new com.alibaba.fastjson.support.config.FastJsonConfig();
         fastJsonConfig.setCharset(Charset.forName(DEFAULT_CHARSET));
-        fastJsonConfig.setDateFormat(DEFAULT_DATE_FORMAT);
+        fastJsonConfig.setDateFormat(DateConstants.YYYY_MM_DD_HH_MM_SS);
         SerializerFeature[] serializerFeatures = new SerializerFeature[]{
             SerializerFeature.PrettyFormat,                 // 格式化
             SerializerFeature.WriteMapNullValue,            // 输出空值

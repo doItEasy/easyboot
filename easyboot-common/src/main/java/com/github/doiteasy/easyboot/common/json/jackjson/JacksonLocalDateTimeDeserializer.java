@@ -19,7 +19,7 @@ package com.github.doiteasy.easyboot.common.json.jackjson;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
-import com.github.doiteasy.easyboot.common.constants.DatePattern;
+import com.github.doiteasy.easyboot.common.constants.DateConstants;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
@@ -41,7 +41,7 @@ public class JacksonLocalDateTimeDeserializer extends JsonDeserializer<LocalDate
         if (StringUtils.isBlank(string)){
             return null;
         }
-        return LocalDateTime.parse(string, DateTimeFormatter.ofPattern(DatePattern.yyyy_MM_dd_HH_mm_ss));
+        return LocalDateTime.parse(string, DateTimeFormatter.ofPattern(DateConstants.YYYY_MM_DD_HH_MM_SS));
     }
 
 }

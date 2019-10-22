@@ -1,4 +1,4 @@
-package com.github.doiteasy.easyboot.tools.utils;
+package com.github.doiteasy.easyboot.tools.myutils;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;

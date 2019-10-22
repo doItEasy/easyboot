@@ -20,7 +20,7 @@ import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
-import com.github.doiteasy.easyboot.tools.utils.StringToDateUtil;
+import com.github.doiteasy.easyboot.tools.myutils.StringToDateUtil;
 
 import java.io.IOException;
 import java.util.Date;

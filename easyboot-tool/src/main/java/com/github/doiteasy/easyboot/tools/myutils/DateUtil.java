@@ -1,4 +1,4 @@
-package com.github.doiteasy.easyboot.tools.utils;
+package com.github.doiteasy.easyboot.tools.myutils;
 
 import com.google.common.collect.Lists;
 import lombok.extern.slf4j.Slf4j;
@@ -20,13 +20,10 @@ import java.util.stream.Stream;
 public class DateUtil {
     public final static String YYYY_MM_DD_HH_MM = "yyyy-MM-dd HH:mm";
     public final static String YYYY_MM_DD_HH_MM_SS = "yyyy-MM-dd HH:mm:ss";
-    public final static String DEFAULT_DATE_FORMAT = YYYY_MM_DD_HH_MM_SS;
     public final static String YYYYMMDDHHMMSS = "yyyyMMddHHmmss";
     public final static String YYYY_MM_DD = "yyyy-MM-dd";
     public final static String YYYYMMDD = "yyyyMMdd";
-    public final static String YYYY = "yyyy";
-    public final static String MM = "MM";
-    public final static String DD = "dd";
+    public final static String HH_mm_ss = "HH:mm:ss";
 
 
     private DateUtil() {
@@ -44,7 +41,7 @@ public class DateUtil {
             return "";
         }
         if(formatStr == null || formatStr.isEmpty()){
-            formatStr = "yyyy-MM-dd HH:mm:ss";
+            formatStr = YYYY_MM_DD_HH_MM_SS;
         }
         SimpleDateFormat sdf = new SimpleDateFormat(formatStr);
         return sdf.format(new Date(Long.valueOf(seconds+"000")));
@@ -284,7 +281,7 @@ public class DateUtil {
                             return getDateFormat(YYYY_MM_DD).parse(date);
                         } catch (Exception e4) {
                             try {
-                                return getDateFormat("HH:mm:ss").parse(date);
+                                return getDateFormat(HH_mm_ss).parse(date);
                             } catch (Exception e5) {
                                 return null;
                             }
@@ -296,7 +293,7 @@ public class DateUtil {
     }
 
     public static DateFormat getDateFormat() {
-        return new SimpleDateFormat(DEFAULT_DATE_FORMAT);
+        return new SimpleDateFormat(YYYY_MM_DD_HH_MM_SS);
     }
 
     public static DateFormat getDateFormat(String format) {
@@ -317,19 +314,7 @@ public class DateUtil {
         return cal.getTime();
     }
 
-    /**
-     * 保留日期部分
-     *
-     * @param date 日期时间
-     * @return yyyy-mm-dd
-     */
-    public static Date YYMMDDDate(Date date) throws ParseException {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        String s = sdf.format(date);
-        Date YYMMDDDate = sdf.parse(s);
-        sdf.parse(s);
-        return YYMMDDDate;
-    }
+
 
     //获取某段时间内的所有日期
     public static List<Date> findDates(Date dStart, Date dEnd) {
@@ -347,28 +332,10 @@ public class DateUtil {
         return dateList;
     }
 
-    //获取某段时间内的所有日期
-    public static List<String> findDatesStr(String dStart, String dEnd) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        Date date = null;
-        Date date1 = null;
-        try {
-            date = sdf.parse(dStart);
-            date1 = sdf.parse(dEnd);
-        } catch (ParseException e) {
-            log.error(e.getMessage(), e);
-        }
-        List<Date> dates = findDates(date, date1);
-        List<String> list = new ArrayList<>(dates.size());
-        dates.forEach((date2) -> {
-            list.add(sdf.format(date2));
-        });
-        return list;
-    }
 
     //获取某段时间相差天数
     public static Integer getDayDiffer(String dStart, String dEnd) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat sdf = new SimpleDateFormat(YYYY_MM_DD);
         Date date = null;
         Date date1 = null;
         try {
@@ -387,7 +354,7 @@ public class DateUtil {
 
     //获取某段时间相差天数
     public static Integer getDayDiffer(Date dStart, Date dEnd) {
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat sdf = new SimpleDateFormat(YYYY_MM_DD);
         Integer dayDiffer = getDayDiffer(sdf.format(dStart), sdf.format(dEnd));
         return dayDiffer;
     }
@@ -407,7 +374,7 @@ public class DateUtil {
 
 
     public static String getDate(int i) {
-        SimpleDateFormat sf = new SimpleDateFormat("yyyyMMdd");
+        SimpleDateFormat sf = new SimpleDateFormat(YYYYMMDD);
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(new Date());
         if (i == 1) {
@@ -434,45 +401,6 @@ public class DateUtil {
         return null;
     }
 
-    /**
-     * 日期字符串格式化
-     *
-     * @param time yyyy-MM-dd
-     * @return LocalDateTime
-     */
-    public static LocalDateTime getByString(String time) {
-        return LocalDate.parse(time, DateTimeFormatter.ISO_DATE_TIME).atStartOfDay();
-    }
-
-    /**
-     * 时间串格式化默认00:00:00
-     *
-     * @param startDate yyyy-MM-dd
-     * @return LocalDateTime
-     */
-    public static LocalDateTime getStartDayByString(String startDate) {
-        return LocalDate.parse(startDate, DateTimeFormatter.ISO_LOCAL_DATE).atStartOfDay();
-    }
-
-    /**
-     * 日期串格式化
-     *
-     * @param startDate yyyy-MM-dd
-     * @return LocalDate
-     */
-    public static LocalDate getDayByString(String startDate) {
-        return LocalDate.parse(startDate, DateTimeFormatter.ISO_LOCAL_DATE);
-    }
-
-    /**
-     * 时间串格式化默认23:59:59
-     *
-     * @param startDate yyyy-MM-dd
-     * @return LocalDateTime
-     */
-    public static LocalDateTime getEndDayByString(String startDate) {
-        return LocalDate.parse(startDate, DateTimeFormatter.ISO_LOCAL_DATE).atTime(23, 59, 59, 999999999);
-    }
 
 
     /**
@@ -492,15 +420,6 @@ public class DateUtil {
      */
     public static LocalDateTime getLastWeekMonday() {
         return LocalDateTime.now().minusWeeks(1).with(DayOfWeek.MONDAY);
-    }
-
-    /**
-     * 上周今天
-     *
-     * @return
-     */
-    public static LocalDateTime getLastWeekToday() {
-        return LocalDateTime.now().minusWeeks(1);
     }
 
 

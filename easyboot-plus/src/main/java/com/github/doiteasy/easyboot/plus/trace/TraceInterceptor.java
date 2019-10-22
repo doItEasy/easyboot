@@ -1,8 +1,8 @@
 package com.github.doiteasy.easyboot.plus.trace;
 
 import com.alibaba.fastjson.JSONObject;
-import com.github.doiteasy.easyboot.tools.utils.StrUtil;
-import com.github.doiteasy.easyboot.tools.utils.WebUtil;
+import com.github.doiteasy.easyboot.tools.myutils.StrUtil;
+import com.github.doiteasy.easyboot.tools.myutils.WebUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.aopalliance.intercept.MethodInterceptor;
 import org.aopalliance.intercept.MethodInvocation;

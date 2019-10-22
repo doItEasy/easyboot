@@ -27,7 +27,7 @@ public class LoggingAspect {
 
 
     @Pointcut( "@annotation(com.github.doiteasy.easyboot.common.log.Log)" +
-            "within(@org.springframework.stereotype.Service *)" +
+            " || within(@org.springframework.stereotype.Service *)" +
         " || within(@org.springframework.web.bind.annotation.RestController *)")
     public void logPointcut() {
         // Method is empty as this is just a Pointcut, the implementations are in the advices.
@@ -48,42 +48,29 @@ public class LoggingAspect {
         } catch (Throwable throwable) {
             String exception=throwable.getClass()+":"+throwable.getMessage();
             long costTime=System.currentTimeMillis()-startTime;
-            log.error("请求类名：{}，请求方法：{}，请求参数:{}，请求结果：{}，请求耗时：{}，",className,methodName,params,exception,costTime);
+            if(throwable instanceof  EasyBootException){
+                log.warn("请求类名：{}，请求方法：{}，请求参数:{}，请求结果：{}，请求耗时：{}，",className,methodName,params,exception,costTime);
+            }else{
+                log.error("请求类名：{}，请求方法：{}，请求参数:{}，请求结果：{}，请求耗时：{}，",className,methodName,params,exception,costTime);
+            }
+            throw  throwable;
         }
         long costTime=System.currentTimeMillis()-startTime;
         log.info("请求类名：{}，请求方法：{}，请求参数:{}，请求结果：{}，请求耗时：{}",className,methodName,params,result,costTime);
         return result;
     }
 
-/**备选
-    @Around("logPointcut()")
-    public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
-        log.info("Enter: {}.{}() with argument[s] = {}", joinPoint.getSignature().getDeclaringTypeName(),
-            joinPoint.getSignature().getName(), Arrays.toString(joinPoint.getArgs()));
-        try {
-            Object result = joinPoint.proceed();
-            log.info("Exit: {}.{}() with result = {}", joinPoint.getSignature().getDeclaringTypeName(),
-                joinPoint.getSignature().getName(), result);
-            return result;
-        } catch (IllegalArgumentException e) {
-            log.error("Illegal argument: {} in {}.{}()", Arrays.toString(joinPoint.getArgs()),
-                joinPoint.getSignature().getDeclaringTypeName(), joinPoint.getSignature().getName());
 
-            throw e;
-        }
-    }
-**/
-
-    @AfterThrowing(pointcut = " logPointcut()", throwing = "e")
-    public void logAfterThrowing(JoinPoint joinPoint, Throwable e) {
-        if(e instanceof EasyBootException) {
-            log.warn("Exception in {}.{}() with cause = \'{}\' and exception = \'{}\'", joinPoint.getSignature().getDeclaringTypeName(),
-                    joinPoint.getSignature().getName(), e.getCause() != null ? e.getCause() : "NULL", e.getMessage(), e);
-        } else {
-            log.error("Exception in {}.{}() with cause = \'{}\' and exception = \'{}\'", joinPoint.getSignature().getDeclaringTypeName(),
-                    joinPoint.getSignature().getName(), e.getCause() != null ? e.getCause() : "NULL", e.getMessage(), e);
-        }
-    }
+//    @AfterThrowing(pointcut = " logPointcut()", throwing = "e")
+//    public void logAfterThrowing(JoinPoint joinPoint, Throwable e) {
+//        if(e instanceof EasyBootException) {
+//            log.warn("Exception in {}.{}() with cause = \'{}\' and exception = \'{}\'", joinPoint.getSignature().getDeclaringTypeName(),
+//                    joinPoint.getSignature().getName(), e.getCause() != null ? e.getCause() : "NULL", e.getMessage(), e);
+//        } else {
+//            log.error("Exception in {}.{}() with cause = \'{}\' and exception = \'{}\'", joinPoint.getSignature().getDeclaringTypeName(),
+//                    joinPoint.getSignature().getName(), e.getCause() != null ? e.getCause() : "NULL", e.getMessage(), e);
+//        }
+//    }
 
 
 

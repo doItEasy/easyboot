@@ -1,4 +1,4 @@
-package com.github.doiteasy.easyboot.tools.utils;
+package com.github.doiteasy.easyboot.tools.myutils;
 
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.LinkedMultiValueMap;
