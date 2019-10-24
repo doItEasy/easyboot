@@ -3,6 +3,7 @@ package com.github.doiteasy.easyboot.plus.dlock.redisson;
 import org.redisson.api.RLock;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import java.util.concurrent.TimeUnit;
 
@@ -10,6 +11,7 @@ import java.util.concurrent.TimeUnit;
  * @author feixm
  * @desc 分布式锁实现基于Redisson
  */
+@Component
 public class RedissonLock {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(RedissonLock.class);

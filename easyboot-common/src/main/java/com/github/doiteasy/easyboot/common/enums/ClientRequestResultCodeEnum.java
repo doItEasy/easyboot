@@ -11,6 +11,8 @@ public enum ClientRequestResultCodeEnum implements ResultCodeEnum {
     PARAM_TYPE_BIND_ERROR(4003,"参数类型错误"),
     PARAM_NOT_COMPLETE(4004,"参数缺失"),
 
+
+    REPETITION_REQUEST(4010,"重复请求")
     ;
 
     ClientRequestResultCodeEnum(Integer code, String message) {

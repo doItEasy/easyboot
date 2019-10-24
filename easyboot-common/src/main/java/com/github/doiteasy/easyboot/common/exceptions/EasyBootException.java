@@ -2,6 +2,7 @@ package com.github.doiteasy.easyboot.common.exceptions;
 
 
 import com.github.doiteasy.easyboot.common.result.ResultCodeEnum;
+import org.apache.commons.lang3.ArrayUtils;
 
 public abstract class EasyBootException extends RuntimeException {
 

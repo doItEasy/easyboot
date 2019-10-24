@@ -1,14 +1,15 @@
+com/github/doiteasy/easyboot/common/enums/ServerBizResultCodeEnum.class
 com/github/doiteasy/easyboot/common/json/fastjson/FastJsonConfig.class
 com/github/doiteasy/easyboot/common/json/jackjson/JacksonLocalDateTimeSerializer.class
 com/github/doiteasy/easyboot/common/log/Log.class
 com/github/doiteasy/easyboot/common/exceptions/EasyBootException.class
-com/github/doiteasy/easyboot/common/enums/SysResultCodeEnum.class
 com/github/doiteasy/easyboot/common/json/jackjson/JacksonDateDeserializer.class
 com/github/doiteasy/easyboot/common/json/jackjson/JacksonLocalDateTimeDeserializer.class
 com/github/doiteasy/easyboot/common/log/LoggingAspect.class
 com/github/doiteasy/easyboot/common/constraints/EmailValidator.class
 com/github/doiteasy/easyboot/common/constraints/IdCard.class
 com/github/doiteasy/easyboot/common/constraints/IdCardValidator.class
+com/github/doiteasy/easyboot/common/enums/ClientRequestResultCodeEnum.class
 com/github/doiteasy/easyboot/common/exceptions/handler/ExceptionHandler.class
 com/github/doiteasy/easyboot/common/result/handler/ResponseResultHandler.class
 com/github/doiteasy/easyboot/common/result/Result.class

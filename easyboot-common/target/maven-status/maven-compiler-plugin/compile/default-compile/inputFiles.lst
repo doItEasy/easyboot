@@ -3,6 +3,7 @@
 /Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/json/fastjson/FastJsonConfig.java
 /Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/json/jackjson/JacksonLocalDateTimeDeserializer.java
 /Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/constraints/EmailValidator.java
+/Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/enums/ServerBizResultCodeEnum.java
 /Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/log/LoggingAspect.java
 /Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/log/Log.java
 /Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/constraints/IdCard.java
@@ -12,7 +13,7 @@
 /Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/exceptions/BusinessException.java
 /Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/json/jackjson/JacksonLocalDateTimeSerializer.java
 /Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/json/jackjson/JacksonDateDeserializer.java
-/Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/enums/SysResultCodeEnum.java
+/Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/enums/ClientRequestResultCodeEnum.java
 /Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/exceptions/handler/ExceptionHandler.java
 /Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/constants/RegexConstants.java
 /Users/feixiangming/myGithubProject/easyboot/easyboot-common/src/main/java/com/github/doiteasy/easyboot/common/constraints/Email.java

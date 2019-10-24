@@ -1,9 +1,15 @@
 package com.github.doiteasy.easyboot.plus.idempotent.support;
 
+import com.github.doiteasy.easyboot.common.enums.ClientRequestResultCodeEnum;
 import com.github.doiteasy.easyboot.common.exceptions.EasyBootException;
 import com.github.doiteasy.easyboot.common.result.ResultCodeEnum;
 
 public class IdempotentException extends EasyBootException {
+
+    public IdempotentException() {
+        super(ClientRequestResultCodeEnum.REPETITION_REQUEST);
+    }
+
 
     public IdempotentException(String message) {
         super(message);

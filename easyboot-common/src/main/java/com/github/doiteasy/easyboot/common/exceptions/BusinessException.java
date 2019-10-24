@@ -18,6 +18,7 @@ package com.github.doiteasy.easyboot.common.exceptions;
 
 
 import com.github.doiteasy.easyboot.common.result.ResultCodeEnum;
+import org.apache.commons.lang3.ArrayUtils;
 
 /**
  * 500打头的服务端异常
@@ -25,7 +26,7 @@ import com.github.doiteasy.easyboot.common.result.ResultCodeEnum;
 public class BusinessException extends EasyBootException{
 
     public BusinessException(String message) {
-        super(message);
+        super(500,message);
     }
     public BusinessException(Integer errorCode, String message) {
         super(errorCode,message);
@@ -37,5 +38,13 @@ public class BusinessException extends EasyBootException{
 
     public BusinessException(ResultCodeEnum codeEnum, Throwable e) {
         super(codeEnum, e);
+    }
+
+    public static BusinessException with(ResultCodeEnum codeEnum, Object... messages) {
+        String message = codeEnum.getMessage();
+        if (ArrayUtils.isNotEmpty(messages)) {
+            message = String.format(message, messages);
+        }
+        return new BusinessException(codeEnum.getCode(),message);
     }
 }

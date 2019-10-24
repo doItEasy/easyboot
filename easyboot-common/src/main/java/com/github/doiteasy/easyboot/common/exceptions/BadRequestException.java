@@ -1,6 +1,7 @@
 package com.github.doiteasy.easyboot.common.exceptions;
 
 import com.github.doiteasy.easyboot.common.result.ResultCodeEnum;
+import org.apache.commons.lang3.ArrayUtils;
 
 
 /**
@@ -12,7 +13,7 @@ public class BadRequestException extends EasyBootException {
 
 
     public BadRequestException(String message) {
-        super(message);
+        super(400,message);
     }
     public BadRequestException(Integer errorCode, String message) {
         super(errorCode,message);
@@ -26,4 +27,11 @@ public class BadRequestException extends EasyBootException {
         super(codeEnum, e);
     }
 
+    public static BadRequestException with(ResultCodeEnum codeEnum, Object... messages) {
+        String message = codeEnum.getMessage();
+        if (ArrayUtils.isNotEmpty(messages)) {
+            message = String.format(message, messages);
+        }
+        return new BadRequestException(codeEnum.getCode(),message);
+    }
 }

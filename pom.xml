@@ -11,10 +11,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>com.github.doItEasy</groupId>
+    <groupId>com.github.doiteasy</groupId>
     <artifactId>easyboot</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.1</version>
     <name>easyboot</name>
     <description>基于spring boot的应用，微服务主流框架的实用组件整理集合 </description>
 
@@ -43,10 +43,12 @@
 
     <distributionManagement>
         <repository>
-            <id>fincloud</id>
-            <url>http://10.100.5.141:8081/content/repositories/yylc-prod</url>
+            <id>yylc</id>
+            <name>deployment</name>
+            <url>http://nexus.yingyingwork.com/repository/yylc-prod/</url>
         </repository>
     </distributionManagement>
+
 
     <repositories>
         <repository>

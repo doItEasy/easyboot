@@ -4,8 +4,8 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>easyboot-dependencies</artifactId>
-        <groupId>com.github.doItEasy</groupId>
-        <version>1.0-SNAPSHOT</version>
+        <groupId>com.github.doiteasy</groupId>
+        <version>1.0.1</version>
         <relativePath>../easyboot-dependencies/pom.xml</relativePath>
     </parent>
 
@@ -15,13 +15,10 @@
     <dependencies>
 
         <dependency>
-            <groupId>com.github.doItEasy</groupId>
+            <groupId>com.github.doiteasy</groupId>
             <artifactId>easyboot-tool</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-aop</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
