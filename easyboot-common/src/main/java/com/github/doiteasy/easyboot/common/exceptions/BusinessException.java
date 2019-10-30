@@ -28,16 +28,14 @@ public class BusinessException extends EasyBootException{
     public BusinessException(String message) {
         super(500,message);
     }
+    public BusinessException(String message, Throwable cause) {
+        super(500,message,cause);
+    }
     public BusinessException(Integer errorCode, String message) {
         super(errorCode,message);
     }
-
-    public BusinessException(ResultCodeEnum codeEnum) {
-        super(codeEnum);
-    }
-
-    public BusinessException(ResultCodeEnum codeEnum, Throwable e) {
-        super(codeEnum, e);
+    public BusinessException(Integer errorCode, String message, Throwable cause) {
+        super(errorCode,message,cause);
     }
 
     public static BusinessException with(ResultCodeEnum codeEnum, Object... messages) {
@@ -47,4 +45,14 @@ public class BusinessException extends EasyBootException{
         }
         return new BusinessException(codeEnum.getCode(),message);
     }
+
+    public static BusinessException with(ResultCodeEnum codeEnum,Throwable cause, Object... messages) {
+        String message = codeEnum.getMessage();
+        if (ArrayUtils.isNotEmpty(messages)) {
+            message = String.format(message, messages);
+        }
+        return new BusinessException(codeEnum.getCode(),message,cause);
+    }
+
+
 }

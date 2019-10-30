@@ -1,9 +1,12 @@
 com/github/doiteasy/easyboot/common/enums/ServerBizResultCodeEnum.class
 com/github/doiteasy/easyboot/common/json/fastjson/FastJsonConfig.class
+com/github/doiteasy/easyboot/common/enums/EnumIntArrayValuable.class
 com/github/doiteasy/easyboot/common/json/jackjson/JacksonLocalDateTimeSerializer.class
 com/github/doiteasy/easyboot/common/log/Log.class
 com/github/doiteasy/easyboot/common/exceptions/EasyBootException.class
 com/github/doiteasy/easyboot/common/json/jackjson/JacksonDateDeserializer.class
+com/github/doiteasy/easyboot/common/enums/DeletedStatusEnum.class
+com/github/doiteasy/easyboot/common/exceptions/ClientRequestException.class
 com/github/doiteasy/easyboot/common/json/jackjson/JacksonLocalDateTimeDeserializer.class
 com/github/doiteasy/easyboot/common/log/LoggingAspect.class
 com/github/doiteasy/easyboot/common/constraints/EmailValidator.class
@@ -19,11 +22,11 @@ com/github/doiteasy/easyboot/common/json/jackjson/JacksonDateSerializer.class
 com/github/doiteasy/easyboot/common/enums/DefaultResultCodeEnum.class
 com/github/doiteasy/easyboot/common/constraints/Email.class
 com/github/doiteasy/easyboot/common/result/handler/ResponseResultInterceptor.class
+com/github/doiteasy/easyboot/common/enums/CommonStatusEnum.class
 com/github/doiteasy/easyboot/common/result/ResultCodeEnum.class
 com/github/doiteasy/easyboot/common/exceptions/BusinessException.class
 com/github/doiteasy/easyboot/common/constraints/PhoneValidator.class
 com/github/doiteasy/easyboot/common/constants/GlobalConstants.class
 com/github/doiteasy/easyboot/common/constants/DateConstants.class
 com/github/doiteasy/easyboot/common/constraints/Phone.class
-com/github/doiteasy/easyboot/common/exceptions/BadRequestException.class
 com/github/doiteasy/easyboot/common/constants/RegexConstants.class

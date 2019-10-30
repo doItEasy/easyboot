@@ -2,7 +2,6 @@ package com.github.doiteasy.easyboot.common.result.handler;
 
 import com.github.doiteasy.easyboot.common.result.ResponseResult;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 
@@ -10,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.lang.reflect.Method;
 
-@Component
 @Slf4j
 public class ResponseResultInterceptor implements HandlerInterceptor {
 
@@ -18,7 +16,6 @@ public class ResponseResultInterceptor implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        System.out.println("==========================================1================================================");
 
         if(handler instanceof HandlerMethod){
             //获取此请求，是否需要返回值包装，设置一个属性标记。

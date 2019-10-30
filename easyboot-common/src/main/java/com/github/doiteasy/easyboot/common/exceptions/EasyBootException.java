@@ -23,15 +23,20 @@ public abstract class EasyBootException extends RuntimeException {
         this.errorCode = errorCode;
     }
 
-    public EasyBootException(ResultCodeEnum codeEnum) {
-        super(codeEnum.getMessage());
-        this.errorCode = codeEnum.getCode();
+    public EasyBootException(Integer errorCode, String message, Throwable cause) {
+        super(message, cause);
+        this.errorCode = errorCode;
     }
 
-    public EasyBootException(ResultCodeEnum codeEnum, Throwable e) {
-        super(codeEnum.getMessage(), e);
-        this.errorCode = codeEnum.getCode();
-    }
+//    public EasyBootException(ResultCodeEnum codeEnum) {
+//        super(codeEnum.getMessage());
+//        this.errorCode = codeEnum.getCode();
+//    }
+//
+//    public EasyBootException(ResultCodeEnum codeEnum, Throwable e) {
+//        super(codeEnum.getMessage(), e);
+//        this.errorCode = codeEnum.getCode();
+//    }
 
     public Integer getErrorCode() {
         return errorCode;
