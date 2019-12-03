@@ -1,4 +1,4 @@
-package com.github.doiteasy.easyboot.plus.mybatis;
+package com.github.doiteasy.easyboot.plus.generate;
 
 import java.io.File;
 import java.util.Scanner;
@@ -9,7 +9,7 @@ public class DemoMain {
         String projectRoot = new File("ga-wisdom-policing-common/src/main").getAbsolutePath();
         System.setProperty("projectRoot", projectRoot);
         System.setProperty("dalPackage", "com.lvdoo.ga.common");
-        String configFile = new File("ga-wisdom-policing-infrastructure/src/main/resources").getAbsoluteFile() + "/mybatis-generator-config.xml";
+        String configFile = new File("ga-wisdom-policing-infrastructure/src/main/resources").getAbsoluteFile() + "/generate-generator-config.xml";
         System.out.println();
         System.out.println("q (quit) 退出");
         System.out.println("输入要生成的表名(%:全部)");

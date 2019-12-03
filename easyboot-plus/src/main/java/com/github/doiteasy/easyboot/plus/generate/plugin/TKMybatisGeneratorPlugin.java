@@ -1,4 +1,4 @@
-package com.github.doiteasy.easyboot.plus.mybatis.plugin;
+package com.github.doiteasy.easyboot.plus.generate.plugin;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,7 +8,6 @@ import lombok.experimental.Accessors;
 import org.apache.commons.lang3.StringUtils;
 import org.mybatis.generator.api.IntrospectedColumn;
 import org.mybatis.generator.api.IntrospectedTable;
-import org.mybatis.generator.api.PluginAdapter;
 import org.mybatis.generator.api.dom.java.*;
 import org.mybatis.generator.api.dom.xml.TextElement;
 import org.mybatis.generator.api.dom.xml.XmlElement;
@@ -16,28 +15,18 @@ import org.mybatis.generator.config.MergeConstants;
 import org.mybatis.generator.internal.DefaultCommentGenerator;
 import org.mybatis.generator.internal.NullProgressCallback;
 import org.mybatis.generator.internal.types.JavaTypeResolverDefaultImpl;
+import tk.mybatis.mapper.generator.MapperPlugin;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
-import java.util.List;
 
-public class MybatisGeneratorPlugin extends PluginAdapter {
-
-    @Override
-    public boolean validate(List<String> warnings) {
-        return true;
-    }
-
-    @Override
-    public void initialized(IntrospectedTable introspectedTable) {
-        super.initialized(introspectedTable);
-//        introspectedTable.setBaseRecordType(introspectedTable.getBaseRecordType() + "DO");
-    }
+public class TKMybatisGeneratorPlugin extends MapperPlugin {
 
     @Override
     public boolean clientGenerated(Interface interfaze, TopLevelClass topLevelClass, IntrospectedTable introspectedTable) {
+        super.clientGenerated(interfaze,topLevelClass,introspectedTable);
         interfaze.addJavaDocLine("/**");
         interfaze.addJavaDocLine(" * " + MergeConstants.NEW_ELEMENT_TAG);
         interfaze.addJavaDocLine(" * 表名: " + introspectedTable.getFullyQualifiedTableNameAtRuntime());
@@ -48,16 +37,20 @@ public class MybatisGeneratorPlugin extends PluginAdapter {
 
     @Override
     public boolean modelBaseRecordClassGenerated(TopLevelClass topLevelClass, IntrospectedTable introspectedTable) {
+        super.modelBaseRecordClassGenerated(topLevelClass,introspectedTable);
+
         topLevelClass.addImportedType(new FullyQualifiedJavaType(Data.class.getCanonicalName()));
         topLevelClass.addImportedType(new FullyQualifiedJavaType(Accessors.class.getCanonicalName()));
-        topLevelClass.addImportedType(new FullyQualifiedJavaType(Builder.class.getCanonicalName()));
+//        topLevelClass.addImportedType(new FullyQualifiedJavaType(Builder.class.getCanonicalName()));
         topLevelClass.addImportedType(new FullyQualifiedJavaType(AllArgsConstructor.class.getCanonicalName()));
         topLevelClass.addImportedType(new FullyQualifiedJavaType(NoArgsConstructor.class.getCanonicalName()));
+        topLevelClass.addImportedType(new FullyQualifiedJavaType(Builder.class.getCanonicalName()));
 
+//        topLevelClass.addImportedType(new FullyQualifiedJavaType(DataObject.class.getCanonicalName()));
 
         topLevelClass.addAnnotation("@Data");
         topLevelClass.addAnnotation("@Accessors(chain = true)");
-        topLevelClass.addAnnotation("@Builder");
+//        topLevelClass.addAnnotation("@Builder");
         topLevelClass.addAnnotation("@NoArgsConstructor");
         topLevelClass.addAnnotation("@AllArgsConstructor");
         return true;
@@ -87,10 +80,7 @@ public class MybatisGeneratorPlugin extends PluginAdapter {
                     return new FullyQualifiedJavaType(LocalDateTime.class.getCanonicalName());
                 }
             }
-//            if (StringUtils.contains(introspectedColumn.getRemarks(), "#加密敏感字段#")) {
-//                System.out.println("转换敏感字段类型:" + introspectedColumn.getActualColumnName());
-//                return new FullyQualifiedJavaType(Sensitive.class.getCanonicalName());
-//            }
+
             return fullyQualifiedJavaType;
         }
     }
@@ -129,9 +119,6 @@ public class MybatisGeneratorPlugin extends PluginAdapter {
                 field.addJavaDocLine(" * 表字段: " + introspectedColumn.getActualColumnName());
             }
             field.addJavaDocLine(" */");
-            if(introspectedColumn.getActualColumnName().equals("id")){
-                field.addAnnotation("@Id");
-            }
         }
 
         @Override

@@ -1,6 +1,6 @@
-package com.github.doiteasy.easyboot.plus.mybatis;
+package com.github.doiteasy.easyboot.plus.generate;
 
-import com.github.doiteasy.easyboot.plus.mybatis.plugin.MybatisGeneratorPlugin;
+import com.github.doiteasy.easyboot.plus.generate.plugin.MybatisGeneratorPlugin;
 import com.github.javaparser.JavaParser;
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.ImportDeclaration;

@@ -22,11 +22,12 @@
  * THE SOFTWARE.
  */
 
-package com.github.doiteasy.easyboot.plus.mybatis.mapper;
+package com.github.doiteasy.easyboot.plus.generate.mapper;
 
-import tk.mybatis.mapper.common.*;
+import tk.mybatis.mapper.common.Mapper;
+import tk.mybatis.mapper.common.MySqlMapper;
 
-public interface TKNoExampleMapper<T> extends BaseMapper<T>, RowBoundsMapper<T>, Marker, MySqlMapper<T>{
+public interface TKMapper<T> extends Mapper<T>, MySqlMapper<T>{
     //TODO
     //FIXME 特别注意，该接口不能被扫描到，否则会出错
 }
