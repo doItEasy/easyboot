@@ -15,7 +15,7 @@
 
 
     <properties>
-        <apache-poi.version>3.8</apache-poi.version>
+        <apache-poi.version>4.1.1</apache-poi.version>
         <alibaba-cloud.version>0.2.2.BUILD-SNAPSHOT</alibaba-cloud.version>
         <commons-lang3.version>3.8</commons-lang3.version>
         <commons-io.version>2.6</commons-io.version>
